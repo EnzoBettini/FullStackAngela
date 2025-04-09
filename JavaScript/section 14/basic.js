@@ -26,3 +26,5 @@ nameLenght.slice(0,3); //output -> Enz
 var nameUpper = "Enzo Bettini";
 nameUpper = nameUpper.toUpperCase(); // puts nameUpper upper case than puts the name in the variable
 nameUpper = nameUpper.toLowerCase();
+
+Math.floor(3.9); // rounds down to the nearest integer 
