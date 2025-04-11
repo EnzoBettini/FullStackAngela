@@ -28,3 +28,8 @@ nameUpper = nameUpper.toUpperCase(); // puts nameUpper upper case than puts the 
 nameUpper = nameUpper.toLowerCase();
 
 Math.floor(3.9); // rounds down to the nearest integer 
+Math.ceil(3.1); // rounds up to the nearest integer
+Math.round(3.5); // rounds to the nearest integer
+Math.pow(2,3); // 2^3 = 8
+Math.sqrt(16); // square root of 16 = 4
+Math.random(); // generates a random number between 0 and 1
