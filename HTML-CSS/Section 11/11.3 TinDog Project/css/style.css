@@ -26,3 +26,20 @@
   height: 100px;
   border-radius: 50%;
 }
+
+.download-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+svg{
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  .download-button {
+    margin-bottom: 16px;
+  }
+}
