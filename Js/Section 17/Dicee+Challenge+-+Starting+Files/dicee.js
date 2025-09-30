@@ -10,6 +10,14 @@ function randomNumber() {
     dice2.src = src2
 
     let headerToChange = document.querySelector("h1")
+
+    if (dice1Value > dice2Value) {
+        headerToChange.textContent = "Player 1 wins!"
+    } else if (dice1Value < dice2Value) {
+        headerToChange.textContent = "Player 2 wins!"
+    } else {
+        headerToChange.textContent = "Tie!"
+    }
 }
 
 randomNumber()
