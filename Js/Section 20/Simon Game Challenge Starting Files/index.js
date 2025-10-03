@@ -10,23 +10,21 @@ let counter = 0;
 let levelCounter = 1;
 let onGame = false;
 
-
-
+// · · ────── ꒰ঌ·✦·໒꒱ ────── · Listeners · ────── ꒰ঌ·✦·໒꒱ ────── · ·//
 
 buttons.forEach(button => {
     button.addEventListener('click', () => {
         if (onGame == true) {
 
             let buttonPressed = button.classList;
-            addPressed(buttonPressed[1]);
             checkSequence = verifySequence(sequence, counter, buttonPressed[1], colors);
-            console.log(checkSequence)
+            addPressed(buttonPressed[1], checkSequence);
             if (checkSequence != false) {
                 counter = checkSequence;
                 if (counter >= levelCounter) {
                     game(sequence, levelCounter, colors);
-                    $("#level-title").text("Level " + levelCounter);
                     levelCounter += 1;
+                    $("#level-title").text("Level " + levelCounter);
                     counter = 0;
                 }
             } else {
@@ -53,11 +51,12 @@ document.addEventListener("keydown", () => {
     }
 })
 
+// · · ────── ꒰ঌ·✦·໒꒱ ────── · ·FUNCTIONS· · ────── ꒰ঌ·✦·໒꒱ ────── · ·//
 
 
-
-function addPressed(button) {
+function addPressed(button, checkSequence) {
     let buttonPressed = document.querySelector('.' + button);
+    playSound(button, checkSequence)
     buttonPressed.classList.add('pressed');
     setTimeout(() => {
         buttonPressed.classList.remove('pressed');
@@ -88,6 +87,7 @@ function game(sequence, counter, colors) {
     let elementToFlash = $('.' + colorToFlash);
     setTimeout(() => {
         elementToFlash.fadeTo("fast", 0)
+        playSound(colorToFlash);
     }, 500)
     setTimeout(() => {
         elementToFlash.fadeTo("fast", 1)
@@ -108,5 +108,15 @@ function verifySequence(sequence, counter, buttonColor, colors) {
     } else {
         changeBackgroundColor();
         return false;
+    }
+}
+
+function playSound(buttonColor, checkSequence) {
+    if (checkSequence == false) {
+        let audio = new Audio("./sounds/wrong.mp3");
+        audio.play();
+    } else {
+        let audio = new Audio("./sounds/" + buttonColor + ".mp3");
+        audio.play();
     }
 }
