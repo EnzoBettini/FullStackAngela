@@ -1,0 +1,42 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Pasta de dependências
+# Não envie para o repositório. Execute 'npm install' ou 'yarn' para gerar.
+node_modules/
+
+# Arquivos de build e produção
+dist
+dist-ssr
+.output
+.next
+/build
+
+# Arquivos de sistema operacional
+.DS_Store
+Thumbs.db
+
+# Arquivos de variáveis de ambiente
+# NUNCA envie senhas, chaves de API ou segredos para o repositório!
+.env
+.env.local
+.env.*.local
+
+# Arquivos de cache e temporários de editores
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.idea
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
